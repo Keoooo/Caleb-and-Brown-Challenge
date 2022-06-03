@@ -7,11 +7,21 @@
 
 | Task                           | Completed           | Evidence  |
 | ----------------------------- |:---------------      | ------------------:|
-| Pagnated List of Currencys           | False         | $1600 |
-| Detailed Cyrpto Page                 | False         |   $12 |
-| Detailed Cyrpto Page                 | False         |   $12 |
+| Pagnated List of Currencys           | False         |                     |
+| Detailed Cyrpto Page                 | False         |                     |
+| Filter Cyrptos name/sym              | False         |                     |  
+| Provide Loading State                | False         |                     |   
+| Error Is data call fails             | True          |                     |   
+| Unit test                            | True          |                     |   
+| Trending Page or Tab                 | True          |                     |   
+| Showcase creativity                  | True          |                     |   
+| Global Market Data                   | True          |                     |   
 
 
+
+
+
+## Tech Used 
 <img align="left" alt="Visual Studio Code" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" style="padding-right:10px;" />
 <img align="left" alt="HTML5" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" style="padding-right:10px;" />
 <img align="left" alt="CSS3" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" style="padding-right:10px;" />
