@@ -3,7 +3,7 @@
 - Add Link here when live 
 
 
-## Challenge Targets
+### Challenge Targets
 
 | Task                           | Completed           | Evidence  |
 | ----------------------------- |:---------------      | ------------------:|
@@ -21,22 +21,10 @@
 ## Thought Process 
 
 
-Why I used getStaticProps
+### Why I used getStaticProps
 
 ```javascript
 export const getStaticProps = async () => {
-  try {
-    const respone = await fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%2024h"
-    );
-    const data = await respone.json();
-    if (!data) {
-      return { notFound: true };
-    }
-    return { props: { data } };
-  } catch (error) {
-    return { notFound: true };
-  }
 };
 ```
 
