@@ -7,15 +7,38 @@
 
 | Task                           | Completed           | Evidence  |
 | ----------------------------- |:---------------      | ------------------:|
-| Pagnated List of Currencys           | False         |                     |
+| Pagnated List of Currencys           | True          |                     |
 | Detailed Cyrpto Page                 | False         |                     |
 | Filter Cyrptos name/sym              | False         |                     |  
 | Provide Loading State                | False         |                     |   
-| Error Is data call fails             | True          |                     |   
-| Unit test                            | True          |                     |   
-| Trending Page or Tab                 | True          |                     |   
-| Showcase creativity                  | True          |                     |   
-| Global Market Data                   | True          |                     |   
+| Error Is data call fails             | False          |                     |   
+| Unit test                            | False          |                     |   
+| Trending Page or Tab                 | False          |                     |   
+| Showcase creativity                  | False          |                     |   
+| Global Market Data                   | False          |                     |   
+
+
+## Thought Process 
+
+
+Why I used getStaticProps
+
+```javascript
+export const getStaticProps = async () => {
+  try {
+    const respone = await fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%2024h"
+    );
+    const data = await respone.json();
+    if (!data) {
+      return { notFound: true };
+    }
+    return { props: { data } };
+  } catch (error) {
+    return { notFound: true };
+  }
+};
+```
 
 
 
