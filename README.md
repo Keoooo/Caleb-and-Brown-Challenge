@@ -1,6 +1,6 @@
 # CALEB AND BROWN CODING CHALLENGE 
 
-- Add Link here when live 
+- Add Link here when site live 
 
 
 ### Challenge Targets
