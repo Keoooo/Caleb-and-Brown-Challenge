@@ -14,7 +14,7 @@
 | Error Is data call fails             | True          |   [Loading State   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/index.js)                            |   
 | Unit test                            | False          |                     |   
 | Trending Page or Tab                 | True          |     [Error State   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge)                            |                     |   
-| Showcase creativity                  | True          | [Site Wide   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/components/Tabs/Tabs.js)           |   
+| Showcase creativity                  | True          | [Site Wide   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge)           |   
 | Global Market Data                   | False          |                     |   
 
 
