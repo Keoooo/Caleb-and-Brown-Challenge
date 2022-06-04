@@ -7,8 +7,8 @@
 
 | Task                           | Completed           | Evidence  |
 | ----------------------------- |:---------------      | ------------------:|
-| Pagnated List of Currencys           | True          |                     |
-| Detailed Cyrpto Page                 | False         |                     |
+| Pagnated List of Currencys           | True          | [Pagnated List of Currencys  ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/index.js)                    |
+| Detailed Cyrpto Page                 | True         |  [Detailed Cyrpto Page   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/detailed/%5Bid%5D.js)                                |
 | Filter Cyrptos name/sym              | False         |                     |  
 | Provide Loading State                | False         |                     |   
 | Error Is data call fails             | False          |                     |   
