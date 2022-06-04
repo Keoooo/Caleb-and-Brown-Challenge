@@ -16,9 +16,11 @@ export default function Home({ data }) {
   };
 
   return (
-    <div className=" ">
+    <div className=" bg-companyBranding">
       <div className="flex flex-col justify-center items-center ">
-        <h1>Caleb and Brown Challenge </h1>
+        <h1 className="text-companySecondary text-2xl">
+          Caleb and Brown Challenge{" "}
+        </h1>
         <CoinTable coinData={coinData} />
         <Pagnation
           coinsPerPage={coinsPerPage}

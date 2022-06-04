@@ -1,5 +1,4 @@
 @tailwind base;
-
 @tailwind components;
 @tailwind utilities;
 
@@ -9,11 +8,11 @@
   }
 
   .h0 {
-    @apply text-3xl font-bold md:text-5xl;
+    @apply text-3xl  font-bold md:text-5xl;
   }
 
   .h1 {
-    @apply text-2xl font-bold md:text-4xl;
+    @apply  text-2xl font-bold md:text-4xl;
   }
 
   .h2 {

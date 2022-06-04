@@ -1,10 +1,12 @@
 import React from "react";
 import { formatDollar, formatPercent } from "../../utils/helpers";
+import { useRouter } from "next/router";
 
 const CoinTable = ({ coinData }) => {
+  const router = useRouter();
   return (
-    <table className="max-w-min mt-10 rounded-lg divide-y divide-gray-300 ">
-      <thead className="bg-gray-50">
+    <table className="max-w-6/12  mt-24 divide-y divide-gray-300 ">
+      <thead className="bg-gray-50  ">
         <tr>
           <th
             scope="col"
@@ -20,7 +22,7 @@ const CoinTable = ({ coinData }) => {
           </th>
           <th
             scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+            className="px-3 a py-3.5 text-left text-sm font-semibold text-gray-900"
           >
             Low 24h
           </th>
@@ -38,7 +40,7 @@ const CoinTable = ({ coinData }) => {
           </th>
           <th
             scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+            className="px-3  py-3.5 text-left text-sm font-semibold text-gray-900"
           >
             Market cap
           </th>
@@ -46,7 +48,7 @@ const CoinTable = ({ coinData }) => {
             scope="col"
             className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
           >
-            Market cap change 24h
+            MC change 24h
           </th>
           <th
             scope="col"
@@ -60,14 +62,20 @@ const CoinTable = ({ coinData }) => {
           >
             ATH Change %
           </th>
-          <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-            <span className="sr-only">Edit</span>
-          </th>
         </tr>
       </thead>
       <tbody className="divide-y divide-gray-200 bg-white">
         {coinData.map((coin) => (
-          <tr key={coin.id} className="hover:bg-gray-100 cursor-pointer">
+          <tr
+            onClick={() => {
+              router.push({
+                pathname: "/detailed/[id]",
+                query: { id: coin.id },
+              });
+            }}
+            key={coin.id}
+            className="hover:bg-gray-100 cursor-pointer"
+          >
             <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
               <div className="flex items-center">
                 <div className="h-10 w-10 flex-shrink-0">
