@@ -9,10 +9,10 @@ const CoinTable = ({ coinData }) => {
       <thead className="bg-gray-50  ">
         <tr>
           <th
-            scope="col"
+            scope="col "
             className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
           >
-            Coin Name
+            <p>Coin Name</p>
           </th>
           <th
             scope="col"
