@@ -1,35 +1,76 @@
 import CoinTable from "../components/Tables/CoinTable";
 import Pagnation from "../components/Pagnation/Pagnation";
 import SearchBar from "../components/UI/SearchBar";
+import TrendingTable from "../components/Tables/TrendingTable";
+import Tabs from "../components/Tabs/Tabs";
 import React, { useState, useEffect } from "react";
 
 export default function Home({ data }) {
   //CONSTANTS
+  //pagnations const
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage, setCoinsPerPage] = useState(10);
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const coinData = data.slice(indexOfFirstCoin, indexOfLastCoin);
+  // sets if user is on trending tab
+  const [trendingCoins, setTrendingCoins] = useState(true);
+  const [trendingData, setTrendingData] = useState();
+  const [trendingError, setTrendingError] = useState(false);
+  const [loadingTrending, setLoadingTrending] = useState(false);
 
   // CHANGE PAGE FUNCTION
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  // Toggle Tabs Fnc
+  const toggle = (val) => {
+    setTrendingCoins(!val);
+  };
+
+  useEffect(() => {
+    const fetchTrending = () => {
+      setLoadingTrending(true);
+      fetch(`https://api.coingecko.com/api/v3/search/trending`)
+        .then((respone) => respone.json())
+        .then((data) => {
+          setTrendingData(data.coins);
+          console.log(data.coins);
+          setLoadingTrending(false);
+        })
+        .catch((error) => {
+          setTrendingError(true);
+          setLoadingTrending(false);
+          console.error("Error:", error);
+        });
+    };
+
+    fetchTrending();
+  }, []);
+
   return (
     <div className=" bg-companyBranding">
-      <div className="flex flex-col justify-center items-center ">
+      <div className="flex flex-col justify-center items-center pb-10 ">
         <h1 className="text-companySecondary text-2xl uppercase pt-10">
           Caleb and Brown Challenge
         </h1>
-        <SearchBar coinData={data} />
-        <CoinTable coinData={coinData} />
-        <Pagnation
-          coinsPerPage={coinsPerPage}
-          paginate={paginate}
-          totalCoins={data.length}
-          currentPage={currentPage}
-        />
+        <Tabs toggle={toggle} tabState={trendingCoins} />
+
+        {!trendingCoins ? (
+          <TrendingTable coinData={trendingData} />
+        ) : (
+          <>
+            <SearchBar coinData={data} />
+            <CoinTable coinData={coinData} />
+            <Pagnation
+              coinsPerPage={coinsPerPage}
+              paginate={paginate}
+              totalCoins={data.length}
+              currentPage={currentPage}
+            />
+          </>
+        )}
       </div>
     </div>
   );
