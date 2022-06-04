@@ -5,6 +5,11 @@ import TrendingTable from "../components/Tables/TrendingTable";
 import Tabs from "../components/Tabs/Tabs";
 import React, { useState, useEffect } from "react";
 
+//--------[*]   Provide an error state if the call fails - notFound - will redirect 404 page.
+//-------[*]   Display a paginated list of Cryptocurrencies -- see <Pagnation/>
+// ------[*]   Added Loading State. And loading Spinner. fetched data with vanilla react so I can implement feature.
+// ------[*]   Added Error State. Passed as prop to "TrendingTable" will display pulsating error message
+
 export default function Home({ data }) {
   //CONSTANTS
   //pagnations const
@@ -58,7 +63,11 @@ export default function Home({ data }) {
         <Tabs toggle={toggle} tabState={trendingCoins} />
 
         {!trendingCoins ? (
-          <TrendingTable coinData={trendingData} />
+          <TrendingTable
+            coinData={trendingData}
+            isLoading={loadingTrending}
+            errorTrending={trendingError}
+          />
         ) : (
           <>
             <SearchBar coinData={data} />
@@ -90,6 +99,3 @@ export const getStaticProps = async () => {
     return { notFound: true };
   }
 };
-
-//--------[*]   Provide an error state if the call fails - notFound - will redirect 404 page.
-//--------[*]   Display a paginated list of Cryptocurrencies -- see <Pagnation/>

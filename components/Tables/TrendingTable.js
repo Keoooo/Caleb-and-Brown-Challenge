@@ -3,10 +3,18 @@ import { formatDollar, formatPercent } from "../../utils/helpers";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/router";
 
-const TrendingTable = ({ coinData }) => {
+const TrendingTable = ({ coinData, isLoading, trendingError }) => {
   const router = useRouter();
 
   useEffect(() => {}, [coinData]);
+
+  if (trendingError) {
+    return (
+      <div className="h-screen text-companySecondary animate-pulse text-4xl mt-10">
+        <p>Error Please Return </p>
+      </div>
+    );
+  }
 
   return (
     <table className="max-w-6/12  mt-24 divide-y divide-gray-300 ">
@@ -26,7 +34,7 @@ const TrendingTable = ({ coinData }) => {
           </th>
         </tr>
       </thead>
-      {coinData ? (
+      {coinData && !isLoading ? (
         <tbody className="divide-y divide-gray-200 bg-white">
           {coinData.map((coin) => (
             <tr key={coin.item.id} className="hover:bg-gray-100 ">
