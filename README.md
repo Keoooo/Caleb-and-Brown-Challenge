@@ -9,13 +9,14 @@
 | ----------------------------- |:---------------      | ------------------:|
 | Pagnated List of Currencys           | True          | [Pagnated List of Currencys  ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/index.js)                    |
 | Detailed Cyrpto Page                 | True         |  [Detailed Cyrpto Page   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/detailed/%5Bid%5D.js)                                |
-| Filter Cyrptos name/sym              | False         |                     |  
+| Filter Cyrptos name/sym              | True         |  [Filter   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/components/UI/SearchBar.js)                   |  
 | Provide Loading State                | False         |                     |   
 | Error Is data call fails             | False          |                     |   
 | Unit test                            | False          |                     |   
 | Trending Page or Tab                 | False          |                     |   
 | Showcase creativity                  | False          |                     |   
 | Global Market Data                   | False          |                     |   
+
 
 
 ## Thought Process 

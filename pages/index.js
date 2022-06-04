@@ -1,5 +1,6 @@
 import CoinTable from "../components/Tables/CoinTable";
 import Pagnation from "../components/Pagnation/Pagnation";
+import SearchBar from "../components/UI/SearchBar";
 import React, { useState, useEffect } from "react";
 
 export default function Home({ data }) {
@@ -18,9 +19,10 @@ export default function Home({ data }) {
   return (
     <div className=" bg-companyBranding">
       <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-companySecondary text-2xl">
-          Caleb and Brown Challenge{" "}
+        <h1 className="text-companySecondary text-2xl uppercase pt-10">
+          Caleb and Brown Challenge
         </h1>
+        <SearchBar coinData={data} />
         <CoinTable coinData={coinData} />
         <Pagnation
           coinsPerPage={coinsPerPage}

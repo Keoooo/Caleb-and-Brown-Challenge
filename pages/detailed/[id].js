@@ -2,6 +2,8 @@ import React from "react";
 import MarketDataChart from "../../components/Charts/MarketDataChart";
 import CoinDetailed from "../../components/UI/CoinDetailed";
 
+//---------[x]For the Visible Cryptocurrencies, provide further information in any form you find appropriate
+
 const CoinCharting = ({ coinData, chartDataJson }) => {
   const { market_caps, prices, total_volumes } = coinData;
   const { developer_data, community_data } = chartDataJson;

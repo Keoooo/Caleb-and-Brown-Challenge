@@ -9,7 +9,7 @@ const Pagnation = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
   }
 
   return (
-    <div className="bg-white px-4 py-3 flex flex-col  justify-between border-t border-gray-200 sm:px-6">
+    <div className="bg-companyBranding px-4 py-3 flex flex-col  justify-between border-t border-gray-200 sm:px-6">
       <div className="flex-1 flex justify-between sm:hidden">
         <a
           href="#"
@@ -26,7 +26,7 @@ const Pagnation = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
       </div>
       <div className=" sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div className=" mr-10">
-          <p className="text-sm text-gray-700 ">
+          <p className="text-sm text-companySecondary ">
             Showing <span className="font-medium">{currentPage}</span> to{" "}
             <span className="font-medium">{pageNumber.length}</span> of{" "}
             <span className="font-medium">{totalCoins}</span> results
@@ -46,7 +46,7 @@ const Pagnation = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
                   href="#"
                   onClick={() => paginate(page)}
                   aria-current="page"
-                  className="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                  className="z-10 bg-companySecondary border-companyBranding text-companyBranding relative inline-flex items-center px-4 py-2 border text-sm font-medium"
                 >
                   {page}
                 </a>
