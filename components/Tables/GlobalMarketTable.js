@@ -7,13 +7,13 @@ const GlobalMarketTable = ({ globalData }) => {
   const { data } = globalData;
 
   return (
-    <>
-      <div className="bg-gray-50  text-gray-600 mb-3 mx-1  uppercase">
+    <div className="overflow-auto max-w-full sm:max-w-fit">
+      <div className="bg-gray-50   text-gray-600 mb-3  mx-1   uppercase">
         <table>
-          <caption className="text-gray-900 font-bold tracking-wider	 uppercase ">
+          <caption className="hidden sm:table-caption	 text-gray-900  overflow-auto  font-bold tracking-wider	 uppercase ">
             Global Market Overview
           </caption>
-          <thead className="bg-gray-50  ">
+          <thead className="bg-gray-50   ">
             <tr>
               <th
                 scope="col "
@@ -47,7 +47,7 @@ const GlobalMarketTable = ({ globalData }) => {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200  bg-white">
+          <tbody className="divide-y divide-gray-200   bg-white">
             <tr>
               <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                 <p className="text-gray-500 hover:text-gray-900">
@@ -69,8 +69,8 @@ const GlobalMarketTable = ({ globalData }) => {
                   {formatDollar(data.defi_market_cap)}
                 </p>
               </td>
-              <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                <p className="text-gray-500 hover:text-gray-900">
+              <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+                <p className="text-gray-500  hover:text-gray-900">
                   {data.top_coin_name}
                 </p>
               </td>
@@ -78,7 +78,7 @@ const GlobalMarketTable = ({ globalData }) => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

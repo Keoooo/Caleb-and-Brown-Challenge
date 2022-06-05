@@ -63,7 +63,7 @@ export default function Home({ data, globalData }) {
         <Tabs toggle={toggle} tabState={trendingCoins} />
 
         {!trendingCoins ? (
-          <div className="flex flex-col sm:flex-row overflow-x-scroll  ">
+          <div className="flex flex-col sm:flex-row   ">
             <TrendingTable
               coinData={trendingData}
               isLoading={loadingTrending}

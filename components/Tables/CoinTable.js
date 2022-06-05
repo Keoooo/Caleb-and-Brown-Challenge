@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 const CoinTable = ({ coinData }) => {
   const router = useRouter();
   return (
-    <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-        <div className="shadow overflow-x-scroll border-b border-gray-500 sm:rounded-lg">
-          <table className="min-w-full max-w-full    divide-y divide-gray-300 ">
+    <div className="overflow-auto  min-w-full  max-w-full ">
+      <div className="align-middle inline-block min-w-full sm:px-20  ">
+        <div className="shadow   border-gray-500 sm:rounded-lg">
+          <table className=" divide-y divide-gray-300  ">
             <thead className="bg-gray-50 min-w-full divide-y divide-gray-300  ">
               <tr>
                 <th

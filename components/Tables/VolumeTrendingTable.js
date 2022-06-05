@@ -9,7 +9,7 @@ const TrendingTable = ({ coinData }) => {
   const router = useRouter();
 
   return (
-    <div className="max-h-screen  overflow-auto">
+    <div className="w-screen px-10  sm:w-fit sm:max-w-full  overflow-auto">
       <table className="overflow-x-auto   m-2   divide-gray-300 ">
         <thead className="bg-gray-50 m-2  ">
           <tr>
