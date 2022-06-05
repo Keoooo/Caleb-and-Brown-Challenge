@@ -17,7 +17,7 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
   }
 
   return (
-    <table className="max-w-6/12 m-2  divide-gray-300 ">
+    <table className="max-w-6/12  m-2  overflow-x-auto divide-gray-300 ">
       <thead className="bg-gray-50  ">
         <tr>
           <th
@@ -47,7 +47,7 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
               }}
               className="hover:bg-gray-100 "
             >
-              <td className="whitespace-nowrapc cursor-pointer py-4 pl-4 pr-3 text-sm sm:pl-6">
+              <td className="whitespace-nowrap  cursor-pointer py-4 pl-4 pr-3 text-sm sm:pl-6">
                 <div className="flex items-center">
                   {console.log(coin.item)}
                   <div className="h-10 w-10 flex-shrink-0">

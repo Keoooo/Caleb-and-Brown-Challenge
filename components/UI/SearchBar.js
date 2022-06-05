@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 const SearchBar = ({ coinData }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
-  console.log(coinData);
+
   return (
-    <div className="flex grow mr-60 justify-center items-center flex-col ">
+    <div className="flex grow sm:mr-60 justify-center items-center flex-col ">
       <input
         type="search"
         onChange={(e) => {

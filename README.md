@@ -1,7 +1,13 @@
 # CALEB AND BROWN CODING CHALLENGE 
 
-- Add Link here when site live 
+- [caleb-and-brown-challenge.vercel.app   ](caleb-and-brown-challenge.vercel.app) 
 
+
+### Use Locally 
+
+* clone repo
+* npm install 
+* npm run dev 
 
 ### Challenge Targets
 

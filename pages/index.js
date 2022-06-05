@@ -57,13 +57,13 @@ export default function Home({ data, globalData }) {
   }, []);
 
   return (
-    <div className=" bg-companyBranding h-full">
+    <div className=" bg-companyBranding min-w-full  h-full  ">
       <Nav coinData={data} />
-      <div className="flex flex-col justify-center  items-center pb-10 ">
+      <div className="flex flex-col  justify-center   items-center pb-10 ">
         <Tabs toggle={toggle} tabState={trendingCoins} />
 
         {!trendingCoins ? (
-          <div className="flex  ">
+          <div className="flex flex-col sm:flex-row overflow-x-scroll  ">
             <TrendingTable
               coinData={trendingData}
               isLoading={loadingTrending}
