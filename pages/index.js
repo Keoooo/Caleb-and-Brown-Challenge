@@ -27,6 +27,7 @@ export default function Home({ data, globalData }) {
   const [trendingError, setTrendingError] = useState(false);
   const [loadingTrending, setLoadingTrending] = useState(false);
 
+  console.log(globalData);
   // CHANGE PAGE FUNCTION
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);

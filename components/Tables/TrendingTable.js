@@ -50,7 +50,6 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
               >
                 <td className="whitespace-nowrap  cursor-pointer py-4 pl-4 pr-3 text-sm sm:pl-6">
                   <div className="flex items-center">
-                    {console.log(coin.item)}
                     <div className="h-10 w-10 flex-shrink-0">
                       <img
                         className="h-10 w-10 rounded-full"

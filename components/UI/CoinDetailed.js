@@ -4,7 +4,6 @@ import { FiTwitter } from "react-icons/fi";
 import { FcReddit } from "react-icons/fc";
 
 const CoinDetailed = ({ coinMarketInfo }) => {
-  console.log(coinMarketInfo);
   const {
     id,
     image,
