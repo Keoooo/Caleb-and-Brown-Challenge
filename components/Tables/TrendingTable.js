@@ -17,7 +17,7 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
   }
 
   return (
-    <table className="max-w-6/12  m-2  overflow-x-auto divide-gray-300 ">
+    <table className="  m-2  overflow-x-auto divide-gray-300 ">
       <thead className="bg-gray-50  ">
         <tr>
           <th
