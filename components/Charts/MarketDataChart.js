@@ -1,5 +1,5 @@
 import React from "react";
-import { formatDollar, formatPercent } from "../../utils/helpers";
+import { formatDollar } from "../../utils/helpers";
 import {
   Label,
   XAxis,
@@ -9,6 +9,8 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
+
+// Need to asisgn values to the numbers in the array for RECHART.
 const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
   const priceData = prices.map((item) => ({
     x: new Date(item[0]).toISOString().split("T")[0],
@@ -31,6 +33,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
         <h2 className="text-companySecondary uppercase">Price Data</h2>
         <ResponsiveContainer
           minWidth={400}
+          maxWidth={500}
           className="m-5"
           width="100%"
           height={200}
@@ -71,6 +74,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
 
         <ResponsiveContainer
           minWidth={400}
+          maxWidth={500}
           className="m-5"
           width="100%"
           height={200}
@@ -103,6 +107,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
 
         <ResponsiveContainer
           className="m-5"
+          maxWidth={500}
           minWidth={400}
           width="100%"
           height={200}
