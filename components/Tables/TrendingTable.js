@@ -10,21 +10,21 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
 
   if (trendingError) {
     return (
-      <div className="h-screen text-companySecondary animate-pulse text-4xl mt-10">
+      <div className="max-h-screen text-companySecondary animate-pulse text-4xl mt-10">
         <p>Error Please Return </p>
       </div>
     );
   }
 
   return (
-    <table className="max-w-6/12  mt-24 divide-y divide-gray-300 ">
+    <table className="max-w-6/12 m-2  divide-gray-300 ">
       <thead className="bg-gray-50  ">
         <tr>
           <th
             scope="col "
             className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
           >
-            <p>Coin Name</p>
+            <p>Coin Geckho Top 7 Search Trending </p>
           </th>
           <th
             scope="col"
@@ -37,8 +37,17 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
       {coinData && !isLoading ? (
         <tbody className="divide-y divide-gray-200 bg-white">
           {coinData.map((coin) => (
-            <tr key={coin.item.id} className="hover:bg-gray-100 ">
-              <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+            <tr
+              key={coin.item.id}
+              onClick={() => {
+                router.push({
+                  pathname: "/detailed/[id]",
+                  query: { id: coin.item.id },
+                });
+              }}
+              className="hover:bg-gray-100 "
+            >
+              <td className="whitespace-nowrapc cursor-pointer py-4 pl-4 pr-3 text-sm sm:pl-6">
                 <div className="flex items-center">
                   {console.log(coin.item)}
                   <div className="h-10 w-10 flex-shrink-0">
