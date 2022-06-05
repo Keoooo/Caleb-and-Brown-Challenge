@@ -1,4 +1,5 @@
 import React from "react";
+import Nav from "../../components/Layout/Nav";
 import MarketDataChart from "../../components/Charts/MarketDataChart";
 import CoinDetailed from "../../components/UI/CoinDetailed";
 
@@ -10,6 +11,7 @@ const CoinCharting = ({ coinData, chartDataJson }) => {
 
   return (
     <>
+      <Nav />
       <div className=" flex bg-companyBranding  flex-col md:flex-row ">
         <MarketDataChart
           marketCap={market_caps}
