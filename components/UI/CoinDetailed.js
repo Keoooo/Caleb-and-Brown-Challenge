@@ -112,6 +112,7 @@ const CoinDetailed = ({ coinMarketInfo }) => {
                 <li className="flex t item-center">
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex	"
                     href={`https://twitter.com/${links.twitter_screen_name}`}
                   >
@@ -123,6 +124,7 @@ const CoinDetailed = ({ coinMarketInfo }) => {
                   <a
                     target="_blank"
                     className="flex	"
+                    rel="noopener noreferrer"
                     href={links.subreddit_url}
                   >
                     <FcReddit className="mr-2" />
