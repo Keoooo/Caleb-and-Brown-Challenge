@@ -6,7 +6,7 @@ const CoinTable = ({ coinData }) => {
   const router = useRouter();
   return (
     <div className="overflow-auto  min-w-full  max-w-full ">
-      <div className="align-middle inline-block min-w-full sm:px-20  ">
+      <div className="align-middle inline-block min-w-full sm:px-20 ">
         <div className="shadow   border-gray-500 sm:rounded-lg">
           <table className=" divide-y divide-gray-300  ">
             <thead className="bg-gray-50 min-w-full divide-y divide-gray-300  ">
@@ -81,7 +81,7 @@ const CoinTable = ({ coinData }) => {
                     key={coin.id}
                     className="hover:bg-gray-100 cursor-pointer"
                   >
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+                    <td className="whitespace-nowrap w-[25%] py-4 pl-4 pr-3 text-sm sm:pl-6">
                       <div className="flex items-center">
                         <div className="h-10 w-10 flex-shrink-0">
                           <img
@@ -94,7 +94,7 @@ const CoinTable = ({ coinData }) => {
                           <div className="font-medium text-gray-900">
                             {`#${coin.market_cap_rank}`}
                           </div>
-                          <div className="text-gray-500 uppercase ">
+                          <div className="text-gray-500 uppercase  ">
                             {coin.id}
                           </div>
                         </div>
