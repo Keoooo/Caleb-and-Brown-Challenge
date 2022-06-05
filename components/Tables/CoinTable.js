@@ -6,14 +6,14 @@ const CoinTable = ({ coinData }) => {
   const router = useRouter();
   return (
     <div className="overflow-auto  min-w-full  max-w-full ">
-      <div className="align-middle inline-block min-w-full  m-auto ">
+      <div className="align-middle m-auto inline-block min-w-full sm:px-20 sm:m-0">
         <div className="shadow   border-gray-500 sm:rounded-lg">
           <table className=" divide-y divide-gray-300  ">
             <thead className="bg-gray-50 min-w-full divide-y divide-gray-300  ">
               <tr>
                 <th
                   scope="col "
-                  className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                  className="py-3.5 pl-4 pr-3 text-left text-ssm font-semibold text-gray-900 sm:pl-6"
                 >
                   <p>Coin Name</p>
                 </th>
