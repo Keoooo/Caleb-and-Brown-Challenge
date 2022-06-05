@@ -33,7 +33,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
         <h2 className="text-companySecondary uppercase">Price Data</h2>
 
         <AreaChart
-          width={300}
+          width={400}
           height={200}
           data={priceData}
           syncId="anyId"
@@ -67,7 +67,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
         <h2 className="uppercase text-companySecondary">Market Cap Data</h2>
 
         <AreaChart
-          width={300}
+          width={400}
           height={200}
           data={marketCapData}
           syncId="anyId"
@@ -92,7 +92,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
         <h2 className="uppercase text-companySecondary ">24h volume</h2>
 
         <AreaChart
-          width={300}
+          width={400}
           height={200}
           data={totalVolumesData}
           syncId="anyId"
