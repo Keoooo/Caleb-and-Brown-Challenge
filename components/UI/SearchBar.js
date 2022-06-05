@@ -6,7 +6,7 @@ const SearchBar = ({ coinData }) => {
   const router = useRouter();
   console.log(coinData);
   return (
-    <>
+    <div className="flex grow mr-60 justify-center items-center flex-col ">
       <input
         type="search"
         onChange={(e) => {
@@ -43,7 +43,7 @@ const SearchBar = ({ coinData }) => {
                       query: { id: item.id },
                     });
                   }}
-                  className="px-6 py-4 flex cursor-pointer hover:bg-gray-100"
+                  className="px-6 py-4  z-10 cursor-pointer hover:bg-gray-100"
                 >
                   <img
                     className="h-5 w-5 mr-3  rounded-full"
@@ -56,7 +56,7 @@ const SearchBar = ({ coinData }) => {
             })}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
