@@ -6,7 +6,7 @@ const CoinTable = ({ coinData }) => {
   const router = useRouter();
   return (
     <div className="overflow-auto  min-w-full  max-w-full ">
-      <div className="align-middle inline-block min-w-full sm:px-20 ">
+      <div className="align-middle inline-block min-w-full  m-auto ">
         <div className="shadow   border-gray-500 sm:rounded-lg">
           <table className=" divide-y divide-gray-300  ">
             <thead className="bg-gray-50 min-w-full divide-y divide-gray-300  ">
