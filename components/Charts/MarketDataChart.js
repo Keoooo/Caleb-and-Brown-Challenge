@@ -31,113 +31,91 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
     <>
       <div className="flex grow h-screen mb-10 min-w-min mt-10 flex-col ml-10 ">
         <h2 className="text-companySecondary uppercase">Price Data</h2>
-        <ResponsiveContainer
-          minWidth={400}
-          maxWidth={500}
-          className="m-5"
-          width="100%"
-          height={200}
-        >
-          <AreaChart
-            width={300}
-            height={200}
-            data={priceData}
-            syncId="anyId"
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <Tooltip content={<CustomTooltip />} position={{ x: 120, y: 1 }} />
-            <XAxis dataKey="x" />
-            <YAxis hide domain={["dataMin - 100", "dataMax + 100"]}>
-              <Label
-                value={"price"}
-                angle={-90}
-                position="outside"
-                fill="#676767"
-                fontSize={14}
-              />
-            </YAxis>
 
-            <Area
-              type="monotone"
-              dataKey="price"
-              stroke="#B47382"
-              fill="#B47382"
+        <AreaChart
+          width={300}
+          height={200}
+          data={priceData}
+          syncId="anyId"
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <Tooltip content={<CustomTooltip />} position={{ x: 120, y: 1 }} />
+          <XAxis dataKey="x" />
+          <YAxis hide domain={["dataMin - 100", "dataMax + 100"]}>
+            <Label
+              value={"price"}
+              angle={-90}
+              position="outside"
+              fill="#676767"
+              fontSize={14}
             />
-          </AreaChart>
-        </ResponsiveContainer>
+          </YAxis>
+
+          <Area
+            type="monotone"
+            dataKey="price"
+            stroke="#B47382"
+            fill="#B47382"
+          />
+        </AreaChart>
+
         <h2 className="uppercase text-companySecondary">Market Cap Data</h2>
 
-        <ResponsiveContainer
-          minWidth={400}
-          maxWidth={500}
-          className="m-5"
-          width="100%"
+        <AreaChart
+          width={300}
           height={200}
+          data={marketCapData}
+          syncId="anyId"
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
         >
-          <AreaChart
-            width={300}
-            height={200}
-            data={marketCapData}
-            syncId="anyId"
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <XAxis dataKey="x" />
-            <YAxis hide domain={["dataMin - 100", "dataMax + 100"]} />
-            <Tooltip content={<CustomTooltip />} position={{ x: 120, y: 1 }} />
-            <Area
-              type="monotone"
-              dataKey="market_cap"
-              stroke="#B47382"
-              fill="#B47382"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
+          <XAxis dataKey="x" />
+          <YAxis hide domain={["dataMin - 100", "dataMax + 100"]} />
+          <Tooltip content={<CustomTooltip />} position={{ x: 120, y: 1 }} />
+          <Area
+            type="monotone"
+            dataKey="market_cap"
+            stroke="#B47382"
+            fill="#B47382"
+          />
+        </AreaChart>
 
         <h2 className="uppercase text-companySecondary ">24h volume</h2>
 
-        <ResponsiveContainer
-          className="m-5"
-          maxWidth={500}
-          minWidth={400}
-          width="100%"
+        <AreaChart
+          width={300}
           height={200}
+          data={totalVolumesData}
+          syncId="anyId"
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
         >
-          <AreaChart
-            width={300}
-            height={200}
-            data={totalVolumesData}
-            syncId="anyId"
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <XAxis dataKey="x" />
-            <YAxis hide domain={["dataMin - 100", "dataMax + 100"]} />
-            <Tooltip
-              content={<CustomTooltipVolume />}
-              position={{ x: 120, y: 1 }}
-            />
-            <Area
-              type="monotone"
-              dataKey="total_volume"
-              stroke="#B47382"
-              fill="#B47382"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
+          <XAxis dataKey="x" />
+          <YAxis hide domain={["dataMin - 100", "dataMax + 100"]} />
+          <Tooltip
+            content={<CustomTooltipVolume />}
+            position={{ x: 120, y: 1 }}
+          />
+          <Area
+            type="monotone"
+            dataKey="total_volume"
+            stroke="#B47382"
+            fill="#B47382"
+          />
+        </AreaChart>
       </div>
     </>
   );
