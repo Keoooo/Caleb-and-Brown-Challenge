@@ -3,6 +3,8 @@ import Pagnation from "../components/Pagnation/Pagnation";
 import SearchBar from "../components/UI/SearchBar";
 import TrendingTable from "../components/Tables/TrendingTable";
 import VolumeTrendingTable from "../components/Tables/VolumeTrendingTable";
+import GlobalMarketTable from "../components/Tables/GlobalMarketTable";
+import Nav from "../components/Layout/Nav";
 import Tabs from "../components/Tabs/Tabs";
 import React, { useState, useEffect } from "react";
 
@@ -11,7 +13,7 @@ import React, { useState, useEffect } from "react";
 // ------[*]   Added Loading State. And loading Spinner. fetched data with vanilla react so I can implement feature.
 // ------[*]   Added Error State. Passed as prop to "TrendingTable" will display pulsating error message
 
-export default function Home({ data }) {
+export default function Home({ data, globalData }) {
   //CONSTANTS
   //pagnations const
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,10 +58,8 @@ export default function Home({ data }) {
 
   return (
     <div className=" bg-companyBranding h-full">
+      <Nav coinData={data} />
       <div className="flex flex-col justify-center  items-center pb-10 ">
-        <h1 className="text-companySecondary text-2xl uppercase pt-10">
-          Caleb and Brown Challenge
-        </h1>
         <Tabs toggle={toggle} tabState={trendingCoins} />
 
         {!trendingCoins ? (
@@ -73,7 +73,7 @@ export default function Home({ data }) {
           </div>
         ) : (
           <>
-            <SearchBar coinData={data} />
+            <GlobalMarketTable globalData={globalData} />
             <CoinTable coinData={coinData} />
             <Pagnation
               coinsPerPage={coinsPerPage}
@@ -88,17 +88,29 @@ export default function Home({ data }) {
   );
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   try {
-    const respone = await fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%2024h"
-    );
-    const data = await respone.json();
-    if (!data) {
+    const [coinMarketData, globalDefiData] = await Promise.all([
+      fetch(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=%2024h`
+      ),
+      fetch(
+        `https://api.coingecko.com/api/v3/global/decentralized_finance_defi`
+      ),
+    ]);
+
+    const [coinMarketDataJson, globalDefiDataJson] = await Promise.all([
+      coinMarketData.json(),
+      globalDefiData.json(),
+    ]);
+
+    if (!coinMarketDataJson || !globalDefiDataJson) {
       return { notFound: true };
     }
-    return { props: { data } };
+    return {
+      props: { data: coinMarketDataJson, globalData: globalDefiDataJson },
+    };
   } catch (error) {
     return { notFound: true };
   }
-};
+}
