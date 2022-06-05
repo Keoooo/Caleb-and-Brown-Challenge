@@ -29,7 +29,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
 
   return (
     <>
-      <div className="flex grow h-screen mb-10 min-w-min mt-10 flex-col ml-10 ">
+      <div className="flex grow h-screen m-0 sm:mb-10 min-w-min sm:mt-10 flex-col sm:ml-10 ">
         <h2 className="text-companySecondary uppercase">Price Data</h2>
 
         <AreaChart
@@ -39,7 +39,7 @@ const MarketDataChart = ({ prices, marketCap, total_volumes }) => {
           syncId="anyId"
           margin={{
             top: 10,
-            right: 30,
+            right: 20,
             left: 0,
             bottom: 0,
           }}
