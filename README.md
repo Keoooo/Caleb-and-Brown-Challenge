@@ -12,10 +12,10 @@
 | Filter Cyrptos name/sym              | True         |  [Filter   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/components/UI/SearchBar.js)                   |  
 | Provide Loading State                | True         |  [Loading State   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/index.js)                   |   
 | Error Is data call fails             | True          |   [Error State   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/pages/index.js)                            |   
-| Unit test                            | True          |      [Site Wide   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/tree/main/tests)               |   
+| Unit test                            | True          |      [Testing   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/tree/main/tests)               |   
 | Trending Page or Tab                 | True          |     [Volume Trending   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/components/Tables/VolumeTrendingTable.js)                                |                     |   
 | Showcase creativity                  | True          | [Site Wide   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge)           |   
-| Global Market Data                   | False          |                     |   
+| Global Market Data                   | False          | [Global Defi Data   ](https://github.com/Keoooo/Caleb-and-Brown-Challenge/blob/main/components/Tables/GlobalMarketTable.js)                     |   
 
 
 
@@ -24,15 +24,30 @@
 ## Thought Process 
 
 
-### Why I used getStaticProps
+### Why I used getStaticProps 
 
 ```javascript
 export const getStaticProps = async () => {
 };
 ```
 
+utilized next js data fetching features. I also fetch data using vanilla react to demonstrate diffrent methods of fetching data :D
 
 
+### Why I used Dynamic Page 
+
+```javascript
+[id].js 
+```
+So each coin in the list can be clicked and you can acsess a more detailed market page 
+
+###  npms used 
+
+* Jest
+* Tailwind
+* reacticons 
+* NpProgress 
+ 
 
 
 ## Tech Used 
