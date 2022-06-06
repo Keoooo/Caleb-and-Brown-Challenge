@@ -1,6 +1,7 @@
+import React from "react";
+import { render, fireEvent, screen } from "@testing-library/react";
+import Tabs from "../components/Tabs/Tabs";
 import Home from "../pages/index";
-import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -21,12 +22,10 @@ global.fetch = jest.fn(() =>
   })
 );
 
-beforeEach(() => {
-  fetch.mockClear();
-});
+describe("Test Tabs Buttons.", () => {
+  const btnClick = jest.fn((value) => {});
 
-describe("Home Page ", () => {
-  it("Renders Table.", () => {
+  it("Test should render tables mathcing the tab name ", () => {
     render(
       <Home
         data={[
@@ -51,15 +50,14 @@ describe("Home Page ", () => {
       />
     );
 
-    // check if all table  is rendered
-    expect(screen.getAllByText("Coin Name"));
-    expect(screen.getAllByText("Price"));
-    expect(screen.getAllByText("Low 24h"));
-    expect(screen.getAllByText("High 24h"));
-    expect(screen.getAllByText("Price Change 24h"));
-    expect(screen.getAllByText("Market cap"));
-    expect(screen.getAllByText("MC change 24h"));
-    expect(screen.getAllByText("All Time High"));
-    expect(screen.getAllByText("ATH Change %"));
+    const TRENDING_BUTTON = screen.getByRole("button", { name: /Trending/i });
+    fireEvent.click(TRENDING_BUTTON);
+
+    expect(screen.getAllByTestId("trending-table-element"));
+
+    const ALL_COINS_BUTTON = screen.getByRole("button", { name: /All Coins/i });
+    fireEvent.click(ALL_COINS_BUTTON);
+
+    expect(screen.getAllByTestId("trending-table-element"));
   });
 });

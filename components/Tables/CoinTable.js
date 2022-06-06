@@ -78,6 +78,7 @@ const CoinTable = ({ coinData }) => {
                   .sort((a, b) => (a.market_cap < b.market_cap ? 1 : -1))
                   .map((coin) => (
                     <motion.tr
+                      data-testid="coin-table-element"
                       key={coin.id}
                       initial={{ opacity: 0, delay: 1 }}
                       animate={{ opacity: 1 }}

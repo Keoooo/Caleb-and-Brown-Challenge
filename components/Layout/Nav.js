@@ -12,7 +12,7 @@ const Nav = ({ coinData }) => {
               <img
                 className="mr-2"
                 src="/caleb-and-brown-logo.svg"
-                alt=""
+                alt="logo-cb"
                 loading="lazy"
               />
             </a>
