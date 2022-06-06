@@ -9,8 +9,8 @@ const Pagnation = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
   }
 
   return (
-    <div className="bg-companyBranding px-4 py-3 flex flex-col  justify-between border-t border-gray-200 sm:px-6">
-      <div className=" sm:flex-1 sm:flex sm:items-center sm:justify-between">
+    <div className="w-full px-20 bg-companyBranding mt-10  py-10 flex flex-col  justify-center border-t border-gray-200 sm:px-2">
+      <div className=" sm:flex-1 sm:flex sm:items-center sm:justify-center">
         <div className=" mr-10">
           <p className="text-sm text-companySecondary ">
             Showing <span className="font-medium">{currentPage}</span> to{" "}

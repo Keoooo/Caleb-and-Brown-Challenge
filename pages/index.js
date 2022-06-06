@@ -58,9 +58,9 @@ export default function Home({ data, globalData }) {
   }, []);
 
   return (
-    <div className=" bg-companyBranding min-w-full  h-full  ">
+    <div className=" bg-gray-100  min-w-full  h-full  ">
       <Nav coinData={data} />
-      <div className="flex flex-col  justify-center   items-center pb-10 ">
+      <div className="flex flex-col  justify-center   items-center  ">
         <Tabs toggle={toggle} tabState={trendingCoins} />
 
         {!trendingCoins ? (

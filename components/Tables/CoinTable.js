@@ -1,14 +1,19 @@
 import React from "react";
 import { formatDollar, formatPercent } from "../../utils/helpers";
 import { useRouter } from "next/router";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CoinTable = ({ coinData }) => {
   const router = useRouter();
+
   return (
-    <div className="overflow-auto  min-w-full  max-w-full ">
-      <div className="align-middle m-auto inline-block min-w-full sm:px-20 sm:m-0">
-        <div className="shadow   border-gray-500 sm:rounded-lg">
-          <table className=" divide-y divide-gray-300  ">
+    <div className="overflow-auto   drop-shadow-lg  min-w-full  max-w-full ">
+      <div className="align-middle m-auto  flex justify-start sm:align-middle sm:m-auto sm:inline-block sm:px-20   min-w-full ">
+        <div className="shadow   border-gray-500 rounded-lg">
+          <table
+            data-testid="trending-table-element"
+            className=" shadow-md   shadow-companyBranding/50   divide-y divide-gray-300  "
+          >
             <thead className="bg-gray-50 min-w-full divide-y divide-gray-300  ">
               <tr>
                 <th
@@ -67,92 +72,103 @@ const CoinTable = ({ coinData }) => {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 bg-white">
-              {coinData
-                .sort((a, b) => (a.market_cap < b.market_cap ? 1 : -1))
-                .map((coin) => (
-                  <tr
-                    onClick={() => {
-                      router.push({
-                        pathname: "/detailed/[id]",
-                        query: { id: coin.id },
-                      });
-                    }}
-                    key={coin.id}
-                    className="hover:bg-gray-100 cursor-pointer"
-                  >
-                    <td className="whitespace-nowrap w-[25%] py-4 pl-4 pr-3 text-sm sm:pl-6">
-                      <div className="flex items-center">
-                        <div className="h-10 w-10 flex-shrink-0">
-                          <img
-                            className="h-10 w-10 rounded-full"
-                            src={coin.image}
-                            alt=""
-                          />
-                        </div>
-                        <div className="ml-4">
-                          <div className="font-medium text-gray-900">
-                            {`#${coin.market_cap_rank}`}
-                          </div>
-                          <div className="text-gray-500 uppercase  ">
-                            {coin.id}
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <p className="text-gray-500 hover:text-gray-900">
-                        {formatDollar(coin.current_price)}
-                      </p>
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <p className="text-gray-500 hover:text-gray-900">
-                        {formatDollar(coin.high_24h)}
-                      </p>
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <p className="text-gray-500 hover:text-gray-900">
-                        {formatDollar(coin.low_24h)}
-                      </p>
-                    </td>
-                    <td
-                      className={
-                        coin.price_change_percentage_24h > 0
-                          ? "text-green-500 whitespace-nowrap px-3 py-4 text-sm"
-                          : "text-red-500 whitespace-nowrap px-3 py-4 text-sm"
-                      }
+            <motion.tbody className="divide-y  divide-gray-200 bg-white">
+              <AnimatePresence>
+                {coinData
+                  .sort((a, b) => (a.market_cap < b.market_cap ? 1 : -1))
+                  .map((coin) => (
+                    <motion.tr
+                      key={coin.id}
+                      initial={{ opacity: 0, delay: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => {
+                        router.push({
+                          pathname: "/detailed/[id]",
+                          query: { id: coin.id },
+                        });
+                      }}
+                      className="hover:bg-gray-100 cursor-pointer"
                     >
-                      {formatPercent(coin.price_change_24h)}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <p className="whitespace-nowrap px-3 py-4 text-sm hover:text-gray-900 text-gray-500">
-                        {formatDollar(coin.market_cap)}
-                      </p>
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <p
+                      <td
+                        a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="whitespace-nowrap w-[25%] py-4 pl-4 pr-3 text-sm sm:pl-6"
+                      >
+                        <div className="flex items-center">
+                          <div className="h-10 w-10 flex-shrink-0">
+                            <img
+                              className="h-10 w-10 rounded-full"
+                              src={coin.image}
+                              alt=""
+                            />
+                          </div>
+                          <div className="ml-4">
+                            <div className="font-medium text-gray-900">
+                              {`#${coin.market_cap_rank}`}
+                            </div>
+                            <div className="text-gray-500 uppercase  ">
+                              {coin.id}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <p className="text-gray-500 hover:text-gray-900">
+                          {formatDollar(coin.current_price)}
+                        </p>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <p className="text-gray-500 hover:text-gray-900">
+                          {formatDollar(coin.high_24h)}
+                        </p>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <p className="text-gray-500 hover:text-gray-900">
+                          {formatDollar(coin.low_24h)}
+                        </p>
+                      </td>
+                      <td
                         className={
                           coin.price_change_percentage_24h > 0
                             ? "text-green-500 whitespace-nowrap px-3 py-4 text-sm"
                             : "text-red-500 whitespace-nowrap px-3 py-4 text-sm"
                         }
                       >
-                        {formatPercent(coin.market_cap_change_percentage_24h)}
-                      </p>
-                    </td>
-                    <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500 hover:text-gray-900">
-                      <p className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {formatDollar(coin.ath)}
-                      </p>
-                    </td>
-                    <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500 hover:text-gray-900">
-                      <p className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {formatPercent(coin.atl_change_percentage)}
-                      </p>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
+                        {formatPercent(coin.price_change_24h)}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <p className="whitespace-nowrap px-3 py-4 text-sm hover:text-gray-900 text-gray-500">
+                          {formatDollar(coin.market_cap)}
+                        </p>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <p
+                          className={
+                            coin.price_change_percentage_24h > 0
+                              ? "text-green-500 whitespace-nowrap px-3 py-4 text-sm"
+                              : "text-red-500 whitespace-nowrap px-3 py-4 text-sm"
+                          }
+                        >
+                          {formatPercent(coin.market_cap_change_percentage_24h)}
+                        </p>
+                      </td>
+                      <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500 hover:text-gray-900">
+                        <p className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {formatDollar(coin.ath)}
+                        </p>
+                      </td>
+                      <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500 hover:text-gray-900">
+                        <p className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {formatPercent(coin.atl_change_percentage)}
+                        </p>
+                      </td>
+                    </motion.tr>
+                  ))}
+              </AnimatePresence>
+            </motion.tbody>
           </table>
         </div>
       </div>

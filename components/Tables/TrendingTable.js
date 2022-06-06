@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { formatDollar, formatPercent } from "../../utils/helpers";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const TrendingTable = ({ coinData, isLoading, trendingError }) => {
   const router = useRouter();
@@ -17,9 +17,12 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
   }
 
   return (
-    <div className="w-screen px-10  sm:w-fit sm:max-w-full  overflow-auto">
-      <table className="  m-2  overflow-x-auto divide-gray-300 ">
-        <thead className="bg-gray-50  ">
+    <div
+      data-testid="trending-table-element"
+      className="w-screen bg-white rounded-lg mr-3 h-fit    shadow-md shadow-companyBranding/50   sm:w-fit sm:max-w-full  overflow-auto"
+    >
+      <table className="  m-2   overflow-x-auto divide-gray-300 ">
+        <thead className="  ">
           <tr>
             <th
               scope="col "
@@ -36,7 +39,12 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
           </tr>
         </thead>
         {coinData && !isLoading ? (
-          <tbody className="divide-y divide-gray-200 bg-white">
+          <motion.tbody
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="divide-y divide-gray-200 bg-white"
+          >
             {coinData.map((coin) => (
               <tr
                 key={coin.item.id}
@@ -72,7 +80,7 @@ const TrendingTable = ({ coinData, isLoading, trendingError }) => {
                 </td>
               </tr>
             ))}
-          </tbody>
+          </motion.tbody>
         ) : (
           <td className="flex h-screen text-companySecondary s ">
             <AiOutlineLoading3Quarters className="animate-spin mt-3 mr-4" />

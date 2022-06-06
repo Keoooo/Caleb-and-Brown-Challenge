@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import { formatDollar, formatPercent } from "../../utils/helpers";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/router";
@@ -9,8 +10,8 @@ const TrendingTable = ({ coinData }) => {
   const router = useRouter();
 
   return (
-    <div className="w-screen px-10  sm:w-fit sm:max-w-full  overflow-auto">
-      <table className="overflow-x-auto   m-2   divide-gray-300 ">
+    <div className="w-screen bg-white rounded-lg  shadow-md shadow-companyBranding/50  sm:w-fit sm:max-w-full  overflow-auto">
+      <table className="overflow-x-auto w-full      divide-gray-300 ">
         <thead className="bg-gray-50 m-2  ">
           <tr>
             <th
@@ -34,7 +35,12 @@ const TrendingTable = ({ coinData }) => {
           </tr>
         </thead>
         {coinData ? (
-          <tbody className="divide-y   divide-gray-200 bg-white">
+          <motion.tbody
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="divide-y   divide-gray-200 bg-white"
+          >
             {coinData
               .sort((a, b) => (a.total_volume < b.total_volume ? 1 : -1))
               .map((coin) => (
@@ -77,7 +83,7 @@ const TrendingTable = ({ coinData }) => {
                   </td>
                 </tr>
               ))}
-          </tbody>
+          </motion.tbody>
         ) : (
           <td className="flex  text-companySecondary  ">
             <AiOutlineLoading3Quarters className="animate-spin mt-3 mr-4" />

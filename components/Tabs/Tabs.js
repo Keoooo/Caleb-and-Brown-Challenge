@@ -7,13 +7,13 @@ function classNames(...classes) {
 const Tabs = ({ toggle, tabState }) => {
   return (
     <div className="flex justify-center items-center mt-10">
-      <div className="flex space-x-4  text-companySecondary tracking-widest text-l mb-5 ">
+      <div className="flex space-x-4  text-companyBranding tracking-widest text-l mb-5 ">
         <button
           onClick={() => toggle(false)}
           className={classNames(
             !tabState
-              ? "hover:border-companySecondary font-bold p-3 rounded-full  border border-transparent "
-              : "hover:border-companySecondary font-bold shadow-2xl rounded-full text-companyBranding shadow-companySecondary bg-companySecondary  border border-transparent  p-3"
+              ? "hover:border-companyBranding font-bold p-3   border-b border-transparent "
+              : "hover:border-companyBranding font-bold   text-companySecondary shadow-companyBranding bg-transparent  border-b border-companySecondary  p-3"
           )}
         >
           All Coins
@@ -22,8 +22,8 @@ const Tabs = ({ toggle, tabState }) => {
           onClick={() => toggle(true)}
           className={classNames(
             tabState
-              ? "hover:border-companySecondary font-bold border rounded-full border-transparent p-3 "
-              : "hover:border-companySecondary font-bold shadow-2xl rounded-full text-companyBranding shadow-companySecondary bg-companySecondary  border border-transparent p-3 "
+              ? "hover:border-companyBranding font-bold border-b  border-transparent p-3 "
+              : "hover:border-companyBranding font-bold   text-companySecondary shadow-companyBranding bg-transparent  border-b border-companySecondary p-3 "
           )}
         >
           Trending
