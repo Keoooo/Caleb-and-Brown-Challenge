@@ -8,6 +8,7 @@
 * clone repo
 * npm install 
 * npm run dev 
+* npm run test           for tests. 
 
 ### Challenge Targets
 
@@ -37,7 +38,9 @@ export const getStaticProps = async () => {
 };
 ```
 
-utilized next js data fetching features. I also fetch data using vanilla react to demonstrate diffrent methods of fetching data :D
+To utilize next js data fetching features for the data to be fetched at build time. I also fetch data using vanilla react to demonstrate diffrent methods of fetching data.
+
+
 
 
 ### Why I used Dynamic Page 
@@ -45,7 +48,17 @@ utilized next js data fetching features. I also fetch data using vanilla react t
 ```javascript
 [id].js 
 ```
-So each coin in the list can be clicked and you can acsess a more detailed market page 
+So each coin in the list can be clicked and you can acsess a more detailed market page. Each detailed page will be pushed to /detailed/[coinid]  
+
+### Learnings. 
+
+*  I Should write my test immediately after finished component for time efficiency and making them more practical at finding errors early.
+*  The challenge prefered typescript which I haven't had much exposure to. But since being assigned the assignment I have been studying typescript. 
+  
+
+ 
+### Test Report. 
+  ![TestReport](../../../Desktop/Screenshot%202022-06-07%20at%2018.22.48.png)
 
 ###  npms used 
 

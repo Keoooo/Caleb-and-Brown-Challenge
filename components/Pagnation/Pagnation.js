@@ -23,13 +23,13 @@ const Pagnation = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
             className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
             aria-label="Pagination"
           >
-            <span className="sr-only">Previous</span>
-            {/* <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" /> */}
             {pageNumber.map((page) => {
               return (
                 <a
                   key={page}
                   href="#"
+                  data-testid="pagnation-item-element"
+                  dataId
                   onClick={() => paginate(page)}
                   aria-current="page"
                   className="z-10 bg-companySecondary border-companyBranding text-companyBranding relative inline-flex items-center px-4 py-2 border text-sm font-medium"
