@@ -5,10 +5,10 @@
 
 ### Use Locally 
 
-* clone repo
-* npm install 
-* npm run dev 
-* npm run test           for tests. 
+* Clone repo
+* `npm install `
+* `npm run dev `
+* `npm run test `          for tests. 
 
 ### Challenge Targets
 
