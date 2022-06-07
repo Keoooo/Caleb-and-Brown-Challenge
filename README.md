@@ -60,15 +60,13 @@ So each coin in the list can be clicked and you can acsess a more detailed marke
 ### Test Report. 
 
  <img width="688" alt="Screenshot 2022-06-07 at 18 22 48" src="https://user-images.githubusercontent.com/33136365/172333251-4f75905f-6a13-4364-9a5f-072b6cac9acf.png">
-
-
-###  npms used 
+ 
+ ###  npms used 
 
 * Jest
 * Tailwind
 * reacticons 
 * NpProgress 
- 
 
 
 ## Tech Used 
@@ -80,6 +78,19 @@ So each coin in the list can be clicked and you can acsess a more detailed marke
 <img align="left" alt="NextJs" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" style="padding-right:10px;" />
 <img align="left" alt="React" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />
 <img align="left" alt="GitHub" width="26px" src="https://user-images.githubusercontent.com/3369400/139447912-e0f43f33-6d9f-45f8-be46-2df5bbc91289.png" style="padding-right:10px;" />
+ 
+
+
+### SITE SNAPSHOT
+<img width="1425" alt="Screenshot 2022-06-07 at 18 30 36" src="https://user-images.githubusercontent.com/33136365/172334713-f1d4e4be-6186-4b92-8058-9ecd18c92465.png">
+<img width="1433" alt="Screenshot 2022-06-07 at 18 30 52" src="https://user-images.githubusercontent.com/33136365/172334724-7df91da6-33bd-4e84-ab42-acb07772d904.png">
+<img width="1428" alt="Screenshot 2022-06-07 at 18 31 05" src="https://user-images.githubusercontent.com/33136365/172334739-6043a664-3439-481f-a7c4-5b294a5cffb4.png">
+<img width="1200" alt="Screenshot 2022-06-07 at 18 31 14" src="https://user-images.githubusercontent.com/33136365/172334750-53f1b59c-724e-48b1-adb7-da9b8c06cbbf.png">
+
+
+
+
+
 
 <br />
 <br />
