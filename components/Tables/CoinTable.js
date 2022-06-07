@@ -8,7 +8,7 @@ const CoinTable = ({ coinData }) => {
 
   return (
     <div className="overflow-auto   drop-shadow-lg  min-w-full  max-w-full ">
-      <div className="align-middle m-auto  flex justify-start sm:align-middle sm:m-auto sm:inline-block sm:px-20   min-w-full ">
+      <div className="align-middle m-auto  flex justify-start sm:align-middle sm:m-auto sm:inline-block sm:px-20 lg:flex lg:justify-center   min-w-full ">
         <div className="shadow   border-gray-500 rounded-lg">
           <table
             data-testid="trending-table-element"

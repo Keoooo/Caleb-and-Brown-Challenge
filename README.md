@@ -67,6 +67,9 @@ So each coin in the list can be clicked and you can acsess a more detailed marke
 * Tailwind
 * reacticons 
 * NpProgress 
+* recharts
+* ESLINT 
+* Framer-Motion
 
 
 ## Tech Used 
