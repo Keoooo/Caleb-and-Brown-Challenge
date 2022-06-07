@@ -1,6 +1,6 @@
 import CoinTable from "../components/Tables/CoinTable";
 import Pagnation from "../components/Pagnation/Pagnation";
-import SearchBar from "../components/UI/SearchBar";
+import ErrorNoData from "../components/Error/ErrorNoData";
 import TrendingTable from "../components/Tables/TrendingTable";
 import VolumeTrendingTable from "../components/Tables/VolumeTrendingTable";
 import GlobalMarketTable from "../components/Tables/GlobalMarketTable";
@@ -65,11 +65,16 @@ export default function Home({ data, globalData }) {
 
         {!trendingCoins ? (
           <div className="flex flex-col sm:flex-row sm:h-screen  ">
-            <TrendingTable
-              coinData={trendingData}
-              isLoading={loadingTrending}
-              errorTrending={trendingError}
-            />
+            {trendingData ? (
+              <TrendingTable
+                coinData={trendingData}
+                isLoading={loadingTrending}
+                errorTrending={trendingError}
+              />
+            ) : (
+              <ErrorNoData />
+            )}
+
             <VolumeTrendingTable coinData={data} />
           </div>
         ) : (
