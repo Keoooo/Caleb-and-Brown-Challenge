@@ -58,7 +58,9 @@ So each coin in the list can be clicked and you can acsess a more detailed marke
 
  
 ### Test Report. 
-  ![TestReport](../../../Desktop/Screenshot%202022-06-07%20at%2018.22.48.png)
+
+ <img width="688" alt="Screenshot 2022-06-07 at 18 22 48" src="https://user-images.githubusercontent.com/33136365/172333251-4f75905f-6a13-4364-9a5f-072b6cac9acf.png">
+
 
 ###  npms used 
 
