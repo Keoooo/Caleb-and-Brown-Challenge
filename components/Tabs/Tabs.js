@@ -6,7 +6,7 @@ function classNames(...classes) {
 
 const Tabs = ({ toggle, tabState }) => {
   return (
-    <div className="flex justify-center items-center mt-10">
+    <div className="flex justify-center items-center mb-8 mt-10">
       <div className="flex space-x-4  text-companyBranding tracking-widest text-l mb-5 ">
         <button
           onClick={() => toggle(false)}

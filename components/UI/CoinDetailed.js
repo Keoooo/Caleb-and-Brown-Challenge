@@ -25,7 +25,7 @@ const CoinDetailed = ({ coinMarketInfo }) => {
   } = coinMarketInfo;
 
   return (
-    <div className="bg-white mt-10 min-h-full w-full shrink overflow-scroll sm:rounded-lg">
+    <div className="bg-white mt-10  min-h-full w-full shrink overflow-scroll sm:rounded-lg">
       <div className="  px-4 py-5 sm:px-6">
         <div className="flex">
           <img
@@ -86,13 +86,13 @@ const CoinDetailed = ({ coinMarketInfo }) => {
           </div>
 
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Market_cap</dt>
+            <dt className="text-sm font-medium text-gray-500">Market cap</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               {formatDollar(market_cap.usd)}
             </dd>
           </div>
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Market_cap</dt>
+            <dt className="text-sm font-medium text-gray-500">Max Supply</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               {max_supply}
             </dd>

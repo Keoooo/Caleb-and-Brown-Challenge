@@ -8,7 +8,7 @@ const GlobalMarketTable = ({ globalData }) => {
   const { data } = globalData;
 
   return (
-    <div className="overflow-auto bg-gray-50 rounded-lg  mb-3 shadow-md shadow-companyBranding/50    max-w-full sm:max-w-fit">
+    <div className="overflow-auto bg-gray-50 rounded-lg mt-10  mb-10 shadow-md shadow-companyBranding/50    max-w-full sm:max-w-fit">
       <div className="bg-gray-50   text-gray-600 mb-3  mx-1   uppercase">
         <table className=" ">
           <caption className="hidden sm:table-caption	 text-gray-900  overflow-auto  font-bold tracking-wider	 uppercase ">
